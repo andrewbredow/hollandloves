@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<h1>{{site.title}}</h1>
+
+{% for cause in site.data.causes %}
+  <div class="cause vcard">
+    <h2 class="fn org">{{cause.name}}</h2>
+    {% if cause.photo %}
+      <img class="photo" src="/img/causes/{{cause.photo}}" alt="{{cause.name}}" />
+    {% endif %}
+
+    <p class="note">{{cause.description}}</p>
+
+    <div class="details">
+      {% if cause.website %}
+        <a class="url" href="{{cause.website}}">Website</a>
+      {% endif %}
+
+      {% if cause.facebook %}
+        <a href="https://facebook.com/{{cause.facebook}}">Facebook</a>
+      {% endif %}
+
+      {% if cause.twitter %}
+        <a href="https://twitter.com/{{cause.twitter}}">Twitter</a>
+      {% endif %}
+
+      {% if cause.email %}
+        <a class="email" href="mailto:{{cause.email}}">{{cause.email}}</a>
+      {% endif %}
+
+      {% if cause.phone %}
+        <a class="tel" href="tel:+1{{cause.phone | remove: "-"}}">{{cause.phone}}</a>
+      {% endif %}
+
+      {% if cause.address.street_address %}
+        <div class="adr">
+          <span class="street-address">{{cause.address.street_address}}</span>
+          <span class="locality">{{cause.address.city}}</span>
+          <span class="region">{{cause.address.state}}</span>
+          <span class="postal-code">{{cause.address.postal_code}}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
