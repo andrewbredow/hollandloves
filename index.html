@@ -3,6 +3,8 @@ layout: default
 ---
 <h1>{{site.title}}</h1>
 
+{% include description.html %}
+
 {% for cause in site.data.causes %}
   <div class="cause vcard">
     <h2 class="fn org">{{cause.name}}</h2>
