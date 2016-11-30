@@ -1,5 +1,4 @@
 
 body {
-  color: $text-color;
-  width: $body-width;
+  @include outer-container;
 }

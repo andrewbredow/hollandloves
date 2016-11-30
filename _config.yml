@@ -26,6 +26,9 @@ issues: "https://github.com/andrewbredow/hollandloves/issues"
 markdown: kramdown
 gems:
   - jekyll-feed
+  - bourbon
+  - bitters
+  - neat
 exclude:
   - Gemfile
   - Gemfile.lock
