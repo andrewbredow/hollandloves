@@ -2,3 +2,19 @@
 body {
   @include outer-container;
 }
+
+footer {
+}
+
+.cause {
+  @include clearfix;
+  .org {
+
+  }
+  .visual {
+    @include span-columns(2);
+  }
+  .details {
+    @include span-columns(10);
+  }
+}
