@@ -42,6 +42,9 @@ layout: default
 
         {% if cause.address.street_address %}
           <div class="adr">
+            {% if cause.address.description %}
+              <span class="description">{{cause.address.description}}</span>
+            {% endif %}
             <span class="street-address">{{cause.address.street_address}}</span>
             <span class="locality">{{cause.address.city}}</span>
             <span class="region">{{cause.address.state}}</span>

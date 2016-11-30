@@ -12,3 +12,79 @@
     city: Holland
     state: MI
     postal_code: 49422-1246
+
+- name: Lakeshore Ethnic Diversity Alliance
+  description: >
+    The Lakeshore Ethnic Diversity Alliance works to dismantle barriers to ensure people of all ethnic backgrounds have equal access and opportunity to participate fully in the life of the community.
+  website: "http://www.ethnicdiversity.org"
+  photo: leda.jpg
+  twitter: RacialEquityNow
+  facebook: diversityalliance
+  phone: (616) 846-9074
+  email:
+  address:
+    street_address: 665 136th Ave
+    city: Holland
+    state: MI
+    postal_code: 49424
+
+- name: Alliance for Cultural and Ethnic Harmony
+  description: >
+    The Alliance for Cultural and Ethnic Harmony is dedicated to promoting unity, justice, equal opportunity, ethnic awareness, cross-cultural understanding and appreciation for diversity.
+  website: "http://www.harmonyalliance.org/"
+  photo: aceh.png
+  twitter:
+  facebook: groups/ACEH.holland.mi
+  phone: (616) 392-5086
+  email: aceh@harmonyalliance.org
+  address:
+    street_address: P.O. Box 3007
+    city: Holland
+    state: MI
+    postal_code: 49422-3007
+
+- name: Latin Americans United for Progress
+  description: >
+    The mission of LAUP  shall be to advocate for and facilitate the education and social well being of the Latino community, and to promote communication and cooperation with the Holland community for a better quality of life for all.
+  website: "http://laupholland.org"
+  photo: laup.jpg
+  twitter: LAUPHolland
+  facebook: laupholland
+  phone: 6163925058
+  email: lena.delreal@laup.org
+  address:
+    street_address: "96 W 15th St #101"
+    city: Holland
+    state: MI
+    postal_code: 49423
+
+- name: Justice for our Neighbors
+  description: >
+    JFON is a grassroots organization striving to make the communities where it works more welcoming to immigrants.
+  website: "http://jfonwestmichigan.org"
+  photo: jfon.jpg
+  twitter:
+  facebook:
+  phone: (616) 301-7461
+  email:
+  address:
+    description: Holland Clinic (First United Methodist Church)
+    street_address: "57 W 10th St"
+    city: Holland
+    state: MI
+    postal_code: 49423
+
+- name: Holland is Ready
+  description: >
+    To work for the safety, rights, and inclusion of lesbian, gay, bisexual and transgender people and their families in the greater Holland area.
+  website: "http://hollandisready.org/"
+  photo: hir.jpg
+  twitter: HollandIsReady
+  facebook: hollandisready
+  phone:
+  email: info@hollandisready.org
+  address:
+    street_address: "PO Box 2064"
+    city: Holland
+    state: MI
+    postal_code: 49422-2064
