@@ -88,3 +88,76 @@
     city: Holland
     state: MI
     postal_code: 49422-2064
+
+- name: Lakeshore Housing Alliance
+  description: >
+    The Lakeshore Housing Alliance (LHA) believes that housing matters and that every resident of Ottawa County, Michigan deserves a safe and affordable place to call home.
+  website: "http://www.ottawaunitedway.org/lakeshore-housing-alliance"
+  photo: lha.jpg
+  twitter:
+  facebook:
+  phone: (616)396-7811 x213
+  # Lyn Raymond
+  email: lraymond@ottawaunitedway.org
+  address:
+    street_address:
+    city:
+    state:
+    postal_code:
+
+- name: African American Awareness and Development Organization
+  description: >
+    Our Mission: To enhance cultural awareness of the African American community through leadership development, with a special focus on self-esteem, academic success, college preparation, and job readiness for youth.
+  website: "http://aaado.org"
+  photo:
+  twitter:
+  facebook:
+  phone:
+  email:
+  contact_page: "http://aaado.org/contact-us/"
+  address:
+    street_address: P.O. Box 1131
+    city: Holland
+    state: MI
+    postal_code: 49422-1131
+
+- name: Community Action House
+  description: >
+    Provide area families and individuals with food, clothing, shelter and the opportunity to build necessary skills to achieve a stable and prosperous life.
+  website: "http://www.communityactionhouse.org"
+  photo: actionhouse.jpg
+  twitter: actionhouse345
+  facebook: communityactionhouse
+  phone: 616 392 2368
+  email: info@communityactionhouse.org
+  address:
+    street_address: 345 W 14th Street
+    city: Holland
+    state: MI
+    postal_code: 49423
+
+- name: Good Samaritan Ministries
+  description: >
+    ENDING POVERTY and HOMELESSNESS Through a HEALTHY, ENGAGED, and COMPASSIONATE COMMUNITY
+  website: "http://www.goodsamministries.com"
+  photo: goodsam.png
+  twitter:
+  facebook:
+  phone: 616.392.7159
+  email: GoodSam2@GoodSamMinistries.com
+  address:
+    street_address: 513 E 8th Street, Suite 25
+    city: Holland
+    state: MI
+    postal_code: 49423
+
+
+
+# TODO Out on the Lakeshore - is there a web presence? How do
+# people get in touch?
+
+# TODO Holland Equity Alliance -- this is a new group forming
+# from among students, staff, parents, and citizens from within
+# Holland Public Schools -- they are working on all issues of
+# social justice within the school system but hope to have impact
+# on community as well -- brand new group  --
