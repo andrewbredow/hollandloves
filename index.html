@@ -37,7 +37,14 @@ layout: default
         {% endif %}
 
         {% if cause.phone %}
-          <a class="tel" href="tel:+1{{cause.phone | remove: "-"}}">{{cause.phone}}</a>
+          {% capture str_phone %}{{cause.phone}}{%endcapture%}
+          <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
+            ({{str_phone | slice: 0, 3}})
+            {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
+            {% if str_phone.size > 10 %}
+              x{{str_phone | slice: 10, str_phone.size}}
+            {% endif %}
+          </a>
         {% endif %}
 
         {% if cause.address.street_address %}
