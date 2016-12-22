@@ -1,19 +1,89 @@
 
 body {
-  @include outer-container;
+  background-color: $color-light-gray;
 }
 
 header {
-
+  color: $color-red;
+  text-align: center;
+  padding-top: $gutter;
+  @include clearfix;
+  .icon {
+    width: 6em;
+  }
+  h1 {
+    font-size: 300%;
+    margin-bottom: 0;
+  }
+  .tagline {
+    font-weight: bold;
+    color: $color-blue;
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
 }
 
-footer {
+section.description {
+  .description-wrapper {
+    @include outer-container;
+
+    .description-row {
+      @include span-columns(12);
+      @include pad;
+      p {
+      }
+    }
+  }
+}
+
+.causes {
+  background-color: #fff;
+  .causes-wrapper {
+    @include outer-container;
+  }
+}
+
+
+section.footer {
+  .footer-wrapper {
+    @include outer-container;
+
+    footer {
+      @include span-columns(12);
+      @include pad;
+      text-align: center;
+
+      .icon {
+        width: 2em;
+        margin-bottom: $gutter;
+      }
+
+      hr {
+        border: 1px solid lighten($color-medium-gray, 25%);
+        margin: 2em auto;
+        width: 12em;
+      }
+
+      .copyright {
+        color: $color-medium-gray;
+        a {
+          color: $color-medium-gray;
+        }
+      }
+    }
+  }
+}
+
+.causes {
+  .causes-wrapper {
+    @include pad;
+  }
 }
 
 .cause {
   @include clearfix;
-  .org {
 
+  .org {
   }
   .visual {
     @include span-columns(2);

@@ -12,8 +12,15 @@
       <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-      {% include header.html %}
+
+      <section class="header">
+        {% include header.html %}
+      </section>
       {{ content }}
-      {% include footer.html %}
+      <section class="footer">
+        <div class="footer-wrapper">
+          {% include footer.html %}
+        </div>
+      </section>
     </body>
 </html>

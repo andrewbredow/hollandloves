@@ -1,64 +1,72 @@
 ---
 layout: default
 ---
-<h1>{{site.title}}</h1>
-
-{% include description.html %}
-
-{% for cause in site.data.causes %}
-  <div class="cause vcard">
-    <h2 class="fn org">{{cause.name}}</h2>
-
-    <div class="visual">
-      {% if cause.photo %}
-        <img class="photo" src="/img/causes/{{cause.photo}}" alt="{{cause.name}}" />
-      {% endif %}
-    </div>
-
-    <div class="details">
-
-      <p class="note">{{cause.description}}</p>
-
-      <div class="details">
-        {% if cause.website %}
-          <a class="url" href="{{cause.website}}">Website</a>
-        {% endif %}
-
-        {% if cause.facebook %}
-          <a href="https://facebook.com/{{cause.facebook}}">Facebook</a>
-        {% endif %}
-
-        {% if cause.twitter %}
-          <a href="https://twitter.com/{{cause.twitter}}">Twitter</a>
-        {% endif %}
-
-        {% if cause.email %}
-          <a class="email" href="mailto:{{cause.email}}">{{cause.email}}</a>
-        {% endif %}
-
-        {% if cause.phone %}
-          {% capture str_phone %}{{cause.phone}}{%endcapture%}
-          <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
-            ({{str_phone | slice: 0, 3}})
-            {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
-            {% if str_phone.size > 10 %}
-              x{{str_phone | slice: 10, str_phone.size}}
-            {% endif %}
-          </a>
-        {% endif %}
-
-        {% if cause.address.street_address %}
-          <div class="adr">
-            {% if cause.address.description %}
-              <span class="description">{{cause.address.description}}</span>
-            {% endif %}
-            <span class="street-address">{{cause.address.street_address}}</span>
-            <span class="locality">{{cause.address.city}}</span>
-            <span class="region">{{cause.address.state}}</span>
-            <span class="postal-code">{{cause.address.postal_code}}</span>
-          </div>
-        {% endif %}
-      </div>
+<section class="description">
+  <div class="description-wrapper">
+    <div class="description-row">
+      {% include description.html %}
     </div>
   </div>
-{% endfor %}
+</section>
+
+<section class="causes">
+  <div class="causes-wrapper">
+    {% for cause in site.data.causes %}
+      <div class="cause vcard">
+        <h2 class="fn org">{{cause.name}}</h2>
+
+        <div class="visual">
+          {% if cause.photo %}
+            <img class="photo" src="/img/causes/{{cause.photo}}" alt="{{cause.name}}" />
+          {% endif %}
+        </div>
+
+        <div class="details">
+
+          <p class="note">{{cause.description}}</p>
+
+          <div class="details">
+            {% if cause.website %}
+              <a class="url" href="{{cause.website}}">Website</a>
+            {% endif %}
+
+            {% if cause.facebook %}
+              <a href="https://facebook.com/{{cause.facebook}}">Facebook</a>
+            {% endif %}
+
+            {% if cause.twitter %}
+              <a href="https://twitter.com/{{cause.twitter}}">Twitter</a>
+            {% endif %}
+
+            {% if cause.email %}
+              <a class="email" href="mailto:{{cause.email}}">{{cause.email}}</a>
+            {% endif %}
+
+            {% if cause.phone %}
+              {% capture str_phone %}{{cause.phone}}{%endcapture%}
+              <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
+                ({{str_phone | slice: 0, 3}})
+                {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
+                {% if str_phone.size > 10 %}
+                  x{{str_phone | slice: 10, str_phone.size}}
+                {% endif %}
+              </a>
+            {% endif %}
+
+            {% if cause.address.street_address %}
+              <div class="adr">
+                {% if cause.address.description %}
+                  <span class="description">{{cause.address.description}}</span>
+                {% endif %}
+                <span class="street-address">{{cause.address.street_address}}</span>
+                <span class="locality">{{cause.address.city}}</span>
+                <span class="region">{{cause.address.state}}</span>
+                <span class="postal-code">{{cause.address.postal_code}}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
