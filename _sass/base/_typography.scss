@@ -30,6 +30,13 @@ a {
   &:focus,
   &:hover {
     color: shade($action-color, 25%);
+    svg {
+      fill: shade($action-color, 25%);
+    }
+  }
+
+  svg {
+    fill: $action-color;
   }
 }
 

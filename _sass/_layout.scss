@@ -3,23 +3,34 @@ body {
   background-color: $color-light-gray;
 }
 
-header {
-  color: $color-red;
-  text-align: center;
-  padding-top: $gutter;
-  @include clearfix;
-  .icon {
-    width: 6em;
-  }
-  h1 {
-    font-size: 300%;
-    margin-bottom: 0;
-  }
-  .tagline {
-    font-weight: bold;
-    color: $color-blue;
-    margin-bottom: 0;
-    text-transform: capitalize;
+section.header {
+  @include outer-container;
+
+  header {
+    color: $color-red;
+    text-align: center;
+    @include pad;
+    padding-bottom: 0;
+    @include clearfix;
+    .icon {
+      width: 6em;
+    }
+    h1 {
+      font-size: 300%;
+      margin-bottom: 0;
+    }
+    .tagline {
+      font-weight: bold;
+      color: $color-blue;
+      margin-bottom: 0;
+      text-transform: capitalize;
+    }
+    .links {
+      float: right;
+      svg {
+        width: 2em;
+      }
+    }
   }
 }
 
