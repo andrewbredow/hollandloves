@@ -25,7 +25,6 @@ issues: "https://github.com/andrewbredow/hollandloves/issues"
 # Build settings
 markdown: kramdown
 gems:
-  - jekyll-feed
   - bourbon
   - bitters
   - neat
