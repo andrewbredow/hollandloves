@@ -41,9 +41,9 @@
     <p class="note">{{cause.description}}</p>
 
     <div class="details">
-      <p>
-        Get In Touch!
-      </p>
+      {% comment %} <p> {% endcomment %}
+      {% comment %}   Get In Touch! {% endcomment %}
+      {% comment %} </p> {% endcomment %}
 
       {% if cause.email %}
         <div class="email-element copy">
@@ -79,15 +79,15 @@
         </div>
       {% endif %}
 
-      {% if true %}
+      {% if false %}
         {% include icons/donate.html %}
       {% endif %}
 
-      {% if true %}
+      {% if false %}
         {% include icons/volunteer.html %}
       {% endif %}
 
-      {% if true %}
+      {% if false %}
         {% include icons/map.html %}
       {% endif %}
     </div>

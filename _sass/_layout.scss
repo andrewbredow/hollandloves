@@ -93,13 +93,48 @@ section.footer {
 
 .cause {
   @include clearfix;
+  margin-bottom: 1.5em;
 
   .org {
   }
   .visual {
+    $icon-size: 2em;
     @include span-columns(2);
+
+    .links {
+      text-align: right;
+      svg {
+        max-width: $icon-size;
+        max-height: $icon-size;
+      }
+    }
   }
   .details {
     @include span-columns(10);
+
+    .email-element {
+      display: inline;
+
+      &.copy {
+        background-color: lighten($light-gray, 10%);
+        border: 1px solid $medium-gray;
+        padding: .25em;
+      }
+      &.send {
+        // padding-top: 10px;
+        margin-bottom: -10px;
+        svg {
+          width: 2em;
+        }
+      }
+    }
+
+    svg {
+      max-width: 2em;
+      max-height: 2em;
+    }
+    .adr {
+      margin-top: .5em;
+    }
   }
 }
