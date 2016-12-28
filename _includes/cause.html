@@ -1,0 +1,95 @@
+<div class="cause vcard">
+
+  <div class="visual">
+    {% if cause.photo %}
+      <img class="photo" src="/img/causes/{{cause.photo}}" alt="{{cause.name}}" />
+    {% endif %}
+
+    <ul class="links">
+      {% if cause.website %}
+        <li>
+          <a class="url" href="{{cause.website}}" title="Visit the {{cause.name}} website">
+            {% include icons/website.html %}
+            {% comment %} Website {% endcomment %}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if cause.twitter %}
+        <li>
+          <a href="https://twitter.com/{{cause.twitter}}" rel="nofollow" title="Follow {{cause.namel}} on Twitter">
+            {% include icons/twitter.html %}
+            {% comment %} Twitter {% endcomment %}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if cause.facebook %}
+        <li>
+          <a href="https://facebook.com/{{cause.facebook}}" rel="nofollow" title="Follow {{cause.name}} on Facebook">
+            {% include icons/facebook.html %}
+            {% comment %} Facebook {% endcomment %}
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <div class="details">
+    <h2 class="fn org">{{cause.name}}</h2>
+
+    <p class="note">{{cause.description}}</p>
+
+    <div class="details">
+      <p>
+        Get In Touch!
+      </p>
+
+      {% if cause.email %}
+        <div class="email-element copy">
+          {{cause.email}}
+        </div>
+        <a class="email email-element send" href="mailto:{{cause.email}}" title="Send an Email in Your Email Client">
+          {% include icons/email.html %}
+        </a>
+      {% endif %}
+
+      {% if cause.phone %}
+        {% capture str_phone %}{{cause.phone}}{%endcapture%}
+        <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
+          ({{str_phone | slice: 0, 3}})
+          {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
+          {% if str_phone.size > 10 %}
+            x{{str_phone | slice: 10, str_phone.size}}
+          {% endif %}
+        </a>
+
+        {% include icons/phone.html %}
+      {% endif %}
+
+      {% if cause.address.street_address %}
+        <div class="adr">
+          {% if cause.address.description %}
+            <span class="description">{{cause.address.description}}</span>
+          {% endif %}
+          <span class="street-address">{{cause.address.street_address}}</span>
+          <span class="locality">{{cause.address.city}}</span>
+          <span class="region">{{cause.address.state}}</span>
+          <span class="postal-code">{{cause.address.postal_code}}</span>
+        </div>
+      {% endif %}
+
+      {% if true %}
+        {% include icons/donate.html %}
+      {% endif %}
+
+      {% if true %}
+        {% include icons/volunteer.html %}
+      {% endif %}
+
+      {% if true %}
+        {% include icons/map.html %}
+      {% endif %}
+    </div>
+  </div>
+</div>
