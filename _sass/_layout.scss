@@ -12,23 +12,37 @@ section.header {
     @include pad;
     padding-bottom: 0;
     @include clearfix;
+
     .icon {
-      width: 6em;
+      width: 2em;
     }
     h1 {
-      font-size: 300%;
       margin-bottom: 0;
     }
+    @include media($large-screen) {
+      .icon {
+        width: 6em;
+      }
+      h1 {
+        font-size: 300%;
+      }
+    }
+
     .tagline {
       font-weight: bold;
       color: $color-blue;
       margin-bottom: 0;
       text-transform: capitalize;
     }
+
     .links {
-      float: right;
-      svg {
-        width: 2em;
+      display: none;
+      @include media($large-screen) {
+        display: block;
+        float: right;
+        svg {
+          width: 2em;
+        }
       }
     }
   }
@@ -42,6 +56,7 @@ section.description {
       @include span-columns(12);
       @include pad;
       p {
+        color: $medium-gray;
       }
     }
   }
@@ -67,6 +82,12 @@ section.footer {
       .icon {
         width: 2em;
         margin-bottom: $gutter;
+      }
+
+      .links {
+        svg {
+          height: 1em;
+        }
       }
 
       hr {
