@@ -10,7 +10,7 @@
       <link rel="icon" type="image/png" href="img/favicon.png" />
 
       <link rel="stylesheet" href="css/styles.css" />
-      <script src="javascript/main.js" />
+      <script src="javascript/main.js"></script>
     </head>
     <body>
       <section class="header">
@@ -22,6 +22,9 @@
         <div class="footer-wrapper">
           {% include footer.html %}
         </div>
+        {% if jekyll.environment == "production" %}
+          {% include analytics.html %}
+        {% endif %}
       </section>
     </body>
 </html>
