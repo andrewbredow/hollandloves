@@ -93,48 +93,91 @@ section.footer {
 
 .cause {
   @include clearfix;
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
 
   .org {
   }
   .visual {
-    $icon-size: 2em;
+    $icon-size: 1.5em;
     @include span-columns(2);
+    text-align: right;
+    line-height: $icon-size;
 
+    .description {
+      display: none;
+      @include media($large-screen) {
+        display: inline;
+      }
+    }
+
+    .photo {
+      $dimensions: 8em;
+
+      max-height: 100%;
+      max-width: 100%;
+
+      @include media($large-screen) {
+        max-height: $dimensions;
+        max-width: $dimensions;
+      }
+    }
     .links {
-      text-align: right;
       svg {
         max-width: $icon-size;
         max-height: $icon-size;
+        vertical-align: middle;
       }
     }
-  }
-  .details {
-    @include span-columns(10);
-
-    .email-element {
-      display: inline;
-
-      &.copy {
-        background-color: lighten($light-gray, 10%);
-        border: 1px solid $medium-gray;
-        padding: .25em;
-      }
-      &.send {
-        // padding-top: 10px;
-        margin-bottom: -10px;
-        svg {
-          width: 2em;
-        }
-      }
-    }
-
     svg {
       max-width: 2em;
       max-height: 2em;
     }
-    .adr {
+  }
+
+  .details {
+    @include span-columns(10);
+
+    svg {
+      height: 1.5em;
+      vertical-align: -36%;
+    }
+
+    .email-element {
+      &.copy {
+        background-color: lighten($light-gray, 10%);
+        display: inline;
+        margin-right: .5em;
+        width: auto;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      &.send {
+      }
+    }
+
+    .tel {
+      svg {
+        height: 2.3em;
+        vertical-align: -60%;
+      }
+    }
+
+    .address {
       margin-top: .5em;
+      .line {
+        display: block;
+      }
+      svg {
+        height: 2em;
+      }
+      .adr,
+      .directions {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 1ex;
+      }
     }
   }
 }

@@ -9,8 +9,8 @@
       {% if cause.website %}
         <li>
           <a class="url" href="{{cause.website}}" title="Visit the {{cause.name}} website">
+            <span class="description">Website</span>
             {% include icons/website.html %}
-            {% comment %} Website {% endcomment %}
           </a>
         </li>
       {% endif %}
@@ -18,8 +18,8 @@
       {% if cause.twitter %}
         <li>
           <a href="https://twitter.com/{{cause.twitter}}" rel="nofollow" title="Follow {{cause.namel}} on Twitter">
+            <span class="description">Twitter</span>
             {% include icons/twitter.html %}
-            {% comment %} Twitter {% endcomment %}
           </a>
         </li>
       {% endif %}
@@ -27,8 +27,8 @@
       {% if cause.facebook %}
         <li>
           <a href="https://facebook.com/{{cause.facebook}}" rel="nofollow" title="Follow {{cause.name}} on Facebook">
+            <span class="description">Facebook</span>
             {% include icons/facebook.html %}
-            {% comment %} Facebook {% endcomment %}
           </a>
         </li>
       {% endif %}
@@ -41,41 +41,53 @@
     <p class="note">{{cause.description}}</p>
 
     <div class="details">
-      {% comment %} <p> {% endcomment %}
-      {% comment %}   Get In Touch! {% endcomment %}
-      {% comment %} </p> {% endcomment %}
-
       {% if cause.email %}
-        <div class="email-element copy">
-          {{cause.email}}
+        <div>
+          <input readonly value="{{cause.email}}" class="email-element copy" data-select-on-click />
+          <a class="email email-element send" href="mailto:{{cause.email}}" title="Send an Email in Your Email Client">
+            {% include icons/email.html %}
+          </a>
         </div>
-        <a class="email email-element send" href="mailto:{{cause.email}}" title="Send an Email in Your Email Client">
-          {% include icons/email.html %}
-        </a>
       {% endif %}
 
       {% if cause.phone %}
         {% capture str_phone %}{{cause.phone}}{%endcapture%}
-        <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
-          ({{str_phone | slice: 0, 3}})
-          {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
-          {% if str_phone.size > 10 %}
-            x{{str_phone | slice: 10, str_phone.size}}
-          {% endif %}
-        </a>
-
-        {% include icons/phone.html %}
+        <div>
+          <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
+            ({{str_phone | slice: 0, 3}})
+            {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
+            {% if str_phone.size > 10 %}
+              x{{str_phone | slice: 10, str_phone.size}}
+            {% endif %}
+            {% include icons/phone.html %}
+          </a>
+        </div>
       {% endif %}
 
       {% if cause.address.street_address %}
-        <div class="adr">
-          {% if cause.address.description %}
-            <span class="description">{{cause.address.description}}</span>
-          {% endif %}
-          <span class="street-address">{{cause.address.street_address}}</span>
-          <span class="locality">{{cause.address.city}}</span>
-          <span class="region">{{cause.address.state}}</span>
-          <span class="postal-code">{{cause.address.postal_code}}</span>
+        <div class="address">
+          <div class="adr">
+            {% if cause.address.description %}
+              <div class="description">{{cause.address.description}}</div>
+            {% endif %}
+            <span class="line">
+              <span class="street-address">{{cause.address.street_address}}</span>
+            </span>
+            <span class="line">
+              <span class="locality">{{cause.address.city}}</span>,
+              <span class="region">{{cause.address.state}}</span>
+              <span class="postal-code">{{cause.address.postal_code}}</span>
+            </span>
+
+          </div>
+          {% unless cause.address.street_address contains "P.O. Box" %}
+            <div class="directions">
+              {% capture str_address %}{{cause.address.street_address}} {{cause.address.city}}, {{cause.address.state}} {{cause.address.postal_code}}{%endcapture%}
+              <a href="https://maps.google.com/?q={{ str_address + url_encode}}" rel="nofollow" title="Get directions to {{cause.name}}">
+                {% include icons/map.html %}
+              </a>
+            </div>
+          {% endunless %}
         </div>
       {% endif %}
 
@@ -85,10 +97,6 @@
 
       {% if false %}
         {% include icons/volunteer.html %}
-      {% endif %}
-
-      {% if false %}
-        {% include icons/map.html %}
       {% endif %}
     </div>
   </div>
