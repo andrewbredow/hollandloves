@@ -13,6 +13,8 @@ gem "jekyll", "3.3.1"
 gem "bourbon"
 gem "bitters"
 gem "neat"
+gem "rake"
+gem "s3_website" # This can be commented out if you're not deploying
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
