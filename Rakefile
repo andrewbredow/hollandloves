@@ -17,6 +17,8 @@ task :renew_ssl do
   --logs-dir #{tmp} \
   --config-dir #{tmp} \
   --work-dir #{tmp} \
+  --renew-by-default \
+  --text \
   --certbot-s3front:auth-s3-bucket #{ENV["S3_BUCKET"]} \
   -i certbot-s3front:installer \
   --certbot-s3front:installer-cf-distribution-id #{ENV["CF_DISTRIBUTION_ID"]} \
