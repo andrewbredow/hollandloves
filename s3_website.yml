@@ -1,7 +1,7 @@
 s3_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
 s3_secret: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
-s3_bucket: hollandloves.org
-cloudfront_distribution_id: E30AFLGPDT2A31
+s3_bucket: <%= ENV["S3_BUCKET"] %>
+cloudfront_distribution_id: <%= ENV["CF_DISTRIBUTION_ID"] %>
 
 # Below are examples of all the available configurations.
 # See README for more detailed info on each of them.
@@ -20,6 +20,7 @@ cloudfront_distribution_id: E30AFLGPDT2A31
 #   - .css
 #   - .md
 # gzip_zopfli: true
+gzip: true
 
 # See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
 # s3_endpoint: ap-northeast-1
