@@ -151,13 +151,48 @@
     state: MI
     postal_code: 49423
 
+- name: Lighthouse Immigration Advocates
+  description: >
+    Lighthouse Immigrant Advocates (LIA) is a law office that brings stability to West Michigan families and communities through legal services and advocacy.
+  website: "http://lighthouseimmigrantadvocates.com"
+  photo: lighthouse.png
+  twitter:
+  facebook:
+  phone: 6162988984
+  email: admin@lighthouseimmigrantadvocates.com
+  address:
+    street_address: 610 Butternut Drive, Suite 100
+    city: Holland
+    state: MI
+    postal_code: 49424
 
+- name: "Progressive Women's Alliance - Lakeshore"
+  description: >
+    The lakeshore chapter of Progressive Women’s Alliance works to identify, connect, and grow a community of like-minded individuals along the West Michigan lakeshore – from Holland to Grand Haven and Muskegon. We advocate for effective public policy on issues affecting women, encourage women’s involvement in the political process, and provide financial and volunteer support to endorsed candidates and causes that align with our values.
+  website: "http://www.progressivewomensalliance.org/lakeshore_cat"
+  photo: pwa.jpg
+  twitter:
+  facebook: Progressive-Womens-Alliance-Lakeshore-61277702028
+  phone:
+  email: PWAlakeshore@progressivewomensalliance.org
+  address:
+    street_address:
+    city:
+    state:
+    postal_code:
 
-# TODO Out on the Lakeshore - is there a web presence? How do
-# people get in touch?
+- name: Immigrants Are a Blessing Not a Burden
+  description: >
+    We’ve been told that immigrants are a burden. Scripture teaches they’re a blessing. We are a community of Christians changing the conversation in the U.S.
+  website: "http://blessingnotburden.org"
+  photo: bnb.jpg
+  twitter:
+  facebook: BlessingNotBurden
+  phone: 61624116916872
+  email: osjha@crcna.org
+  address:
+    street_address:
+    city:
+    state:
+    postal_code:
 
-# TODO Holland Equity Alliance -- this is a new group forming
-# from among students, staff, parents, and citizens from within
-# Holland Public Schools -- they are working on all issues of
-# social justice within the school system but hope to have impact
-# on community as well -- brand new group  --
