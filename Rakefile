@@ -8,6 +8,7 @@ task :build do
   system "JEKYLL_ENV=production bundle exec jekyll build"
 end
 
+desc "Renew the SSL certificate"
 task :renew_ssl do
   tmp = Dir.tmpdir
   command = %{
