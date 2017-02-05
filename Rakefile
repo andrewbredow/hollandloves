@@ -1,4 +1,5 @@
 require "dotenv"
+require "rest_client"
 require "pry"
 
 Dotenv.load
@@ -37,7 +38,7 @@ end
 desc "Generate rasterized logos based on logo svg"
 task :logos => [:build] do
   temp = Tempfile.new(["logo", ".svg"])
-  temp.write(File.open("_includes/icons/logo.html", "rb").read)
+  temp.write(File.open("_includes/logo.html", "rb").read)
   temp.close
 
   logo_stylesheet = File.open("_site/css/icon.css", "rb")
@@ -46,4 +47,11 @@ task :logos => [:build] do
   system "svgexport #{temp.path} img/apple-touch-icon.png pad 80% 360: \"#{css}\""
   system "svgexport #{temp.path} img/favicon.png pad 60% 196: \"#{css}\""
   temp.unlink
+end
+
+desc "Build a new version of the Fontello font"
+task :font do
+  uri = "http://fontello.com"
+  session = RestClient.post(uri, { "config" => File.new("font/config.json", "rb") })
+  system "open #{uri}/#{session}"
 end

@@ -14,6 +14,7 @@ gem "bourbon"
 gem "bitters"
 gem "neat"
 gem "rake"
+gem "rest_client"
 gem "s3_website" # This can be commented out if you're not deploying
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

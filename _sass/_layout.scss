@@ -3,6 +3,13 @@ body {
   background-color: $color-light-gray;
 }
 
+.icon {
+  font-size: 1.3em;
+}
+.icon-map {
+  font-size: 1.4em;
+}
+
 section.header {
   @include outer-container;
 
@@ -46,14 +53,14 @@ section.header {
     padding-bottom: 0;
     @include clearfix;
 
-    .icon {
+    .logo {
       width: 2em;
     }
     h1 {
       margin-bottom: 0;
     }
     @include media($large-screen) {
-      .icon {
+      .logo {
         width: 6em;
       }
       h1 {
@@ -73,8 +80,8 @@ section.header {
       @include media($large-screen) {
         display: block;
         float: right;
-        svg {
-          width: 2em;
+        .icon {
+          font-size: 2em;
         }
       }
     }
@@ -102,7 +109,6 @@ section.description {
   }
 }
 
-
 section.footer {
   .footer-wrapper {
     @include outer-container;
@@ -112,15 +118,12 @@ section.footer {
       @include pad;
       text-align: center;
 
-      .icon {
+      .logo {
         width: 2em;
         margin-bottom: $gutter;
       }
 
       .links {
-        svg {
-          height: 1em;
-        }
       }
 
       hr {
@@ -152,15 +155,18 @@ section.footer {
   .org {
   }
   .visual {
-    $icon-size: 1.5em;
     @include span-columns(2);
     text-align: right;
-    line-height: $icon-size;
 
     .description {
       display: none;
       @include media($large-screen) {
         display: inline;
+      }
+    }
+    @include media($large-screen) {
+      .icon {
+        font-size: 1em;
       }
     }
 
@@ -175,26 +181,10 @@ section.footer {
         max-width: $dimensions;
       }
     }
-    .links {
-      svg {
-        max-width: $icon-size;
-        max-height: $icon-size;
-        vertical-align: middle;
-      }
-    }
-    svg {
-      max-width: 2em;
-      max-height: 2em;
-    }
   }
 
   .details {
     @include span-columns(10);
-
-    svg {
-      height: 1.5em;
-      vertical-align: -36%;
-    }
 
     .email-element {
       &.copy {
@@ -212,9 +202,8 @@ section.footer {
     }
 
     .tel {
-      svg {
-        height: 2.3em;
-        vertical-align: -60%;
+      .icon {
+        font-size: 1em;
       }
     }
 
@@ -222,9 +211,6 @@ section.footer {
       margin-top: .5em;
       .line {
         display: block;
-      }
-      svg {
-        height: 2em;
       }
       .adr,
       .directions {
