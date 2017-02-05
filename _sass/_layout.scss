@@ -6,9 +6,6 @@ body {
 .icon {
   font-size: 1.3em;
 }
-.icon-map {
-  font-size: 1.4em;
-}
 
 section.header {
   @include outer-container;
@@ -188,8 +185,11 @@ section.footer {
 
     .email-element {
       &.copy {
+        display: none;
+        @include media($large-screen) {
+          display: inline;
+        }
         background-color: lighten($light-gray, 10%);
-        display: inline;
         margin-right: .5em;
         width: auto;
         &:focus {
@@ -197,8 +197,20 @@ section.footer {
           box-shadow: none;
         }
       }
-      &.send {
+      &.click {
+        @include media($large-screen) {
+          display: none;
+        }
       }
+      .icon {
+        font-size: 1em;
+      }
+      @include media($large-screen) {
+        .icon {
+          font-size: 1.3em;
+        }
+      }
+
     }
 
     .tel {
@@ -217,6 +229,9 @@ section.footer {
         display: inline-block;
         vertical-align: top;
         margin-right: 1ex;
+      }
+      .icon-map {
+        font-size: 1.1em;
       }
     }
   }
