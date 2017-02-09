@@ -205,22 +205,22 @@
     state:
     postal_code:
 
-- name: Holland Public Schools Equity Alliance
-  description: >
-    Keep social justice & equity at the forefront of our work in our community (in & beyond HPS);
-    Bring more voices to the dialogue - break down barriers, meet people where they are, & engage youth intentionally;
-    Work to build community & establish authentic human connections, learn from each other’s stories.
-  website:
-  photo: hps_equity.png
-  twitter:
-  facebook: hpsequity
-  phone:
-  # Andrea Mehall
-  email: amehall@hollandpublicschools.org
-  address:
-    description: Holland Early College
-    street_address: 45 E 25th Street
-    city: Holland
-    state: MI
-    postal_code: 49423
+# - name: Holland Public Schools Equity Alliance
+#   description: >
+#     Keep social justice & equity at the forefront of our work in our community (in & beyond HPS);
+#     Bring more voices to the dialogue - break down barriers, meet people where they are, & engage youth intentionally;
+#     Work to build community & establish authentic human connections, learn from each other’s stories.
+#   website:
+#   photo: hps_equity.png
+#   twitter:
+#   facebook: hpsequity
+#   phone:
+#   # Andrea Mehall
+#   email: amehall@hollandpublicschools.org
+#   address:
+#     description: Holland Early College
+#     street_address: 45 E 25th Street
+#     city: Holland
+#     state: MI
+#     postal_code: 49423
 
