@@ -20,7 +20,8 @@
   photo: leda.jpg
   twitter: RacialEquityNow
   facebook: diversityalliance
-  phone: 6168469074
+  phone:
+    - 6168469074
   email: program@ethnicdiversity.org
   address:
     street_address: 665 136th Ave
@@ -35,7 +36,9 @@
   photo: aceh.png
   twitter:
   facebook: groups/ACEH.holland.mi
-  phone: 6163925086
+  phone:
+    - 6163962201
+    - 6168864758
   email: aceh@harmonyalliance.org
   address:
     street_address: P.O. Box 3007
@@ -45,12 +48,13 @@
 
 - name: Latin Americans United for Progress
   description: >
-    The mission of LAUP  shall be to advocate for and facilitate the education and social well being of the Latino community, and to promote communication and cooperation with the Holland community for a better quality of life for all.
+    LAUP’s mission is to empower Latinos to participate in creating a better community for all.
   website: "http://laupholland.org"
   photo: laup.jpg
   twitter: LAUPHolland
   facebook: laupholland
-  phone: 6163925058
+  phone:
+    - 6163925058
   email: roberto@laup.org
   address:
     street_address: "96 W 15th St #101"
@@ -65,7 +69,8 @@
   photo: jfon.jpg
   twitter:
   facebook:
-  phone: 6163017461
+  phone:
+    - 6163017461
   email:
   address:
     description: Holland Clinic (First United Methodist Church)
@@ -96,7 +101,8 @@
   photo: lha.jpg
   twitter:
   facebook:
-  phone: 6163967811213
+  phone:
+    - 6163967811213
   # Lyn Raymond
   email: lraymond@ottawaunitedway.org
   address:
@@ -127,7 +133,8 @@
   photo: actionhouse.jpg
   twitter: actionhouse345
   facebook: communityactionhouse
-  phone: 6163922368
+  phone:
+    - 6163922368
   email: info@communityactionhouse.org
   address:
     street_address: 345 W 14th Street
@@ -142,7 +149,8 @@
   photo: goodsam.png
   twitter:
   facebook:
-  phone: 6163927159
+  phone:
+    - 6163927159
   email: GoodSam2@GoodSamMinistries.com
   address:
     street_address: 513 E 8th Street, Suite 25
@@ -157,7 +165,8 @@
   photo: lighthouse.png
   twitter:
   facebook:
-  phone: 6162988984
+  phone:
+    - 6162988984
   email: admin@lighthouseimmigrantadvocates.com
   address:
     street_address: 610 Butternut Drive, Suite 100
@@ -187,7 +196,8 @@
   photo: bnb.jpg
   twitter:
   facebook: BlessingNotBurden
-  phone: 61624116916872
+  phone:
+    - 61624116916872
   email: osjha@crcna.org
   address:
     street_address:

@@ -51,8 +51,8 @@
         </div>
       {% endif %}
 
-      {% if cause.phone %}
-        {% capture str_phone %}{{cause.phone}}{%endcapture%}
+      {% for phone in cause.phone %}
+        {% capture str_phone %}{{phone}}{%endcapture%}
         <div>
           <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
             ({{str_phone | slice: 0, 3}})
@@ -63,7 +63,7 @@
             <i class="icon icon-phone"></i>
           </a>
         </div>
-      {% endif %}
+      {% endfor %}
 
       {% if cause.address.street_address %}
         <div class="address">
