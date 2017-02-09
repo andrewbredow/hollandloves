@@ -224,3 +224,20 @@
 #     state: MI
 #     postal_code: 49423
 
+- name: 70x7 Life Recovery
+  description: >
+    To restore dignity, purpose and hope to a recovering community, one relationship at a time.
+  website: "http://www.70x7liferecovery.org/"
+  photo: 70x7.png
+  twitter:
+  facebook: 70x7liferecovery
+  phone:
+    - 6167960685
+  email:
+  address:
+    description:
+    street_address: 97 W 22nd Street
+    city: Holland
+    state: MI
+    postal_code: 49423
+
