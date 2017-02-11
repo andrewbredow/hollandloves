@@ -11,8 +11,25 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.querySelectorAll("[data-select-on-click]").forEach(function(el) {
-    el.onclick = function() {
-      this.select();
-    }
+    el.addEventListener("click", function(event) {
+      event.target.select();
+    });
+  });
+
+  var filterForm = document.querySelector("[data-filter-form]");
+  var filterNodes = filterForm.querySelectorAll("[data-filter]");
+
+  var updateParams = function() {
+    var params = [];
+    filterNodes.forEach(function(node) {
+      params.push(node.name + "=" + node.value);
+    });
+    window.location.hash = params.join("&");
+  }
+
+  document.querySelectorAll("[data-filter]").forEach(function(el) {
+    el.addEventListener("change", function() {
+      updateParams();
+    });
   });
 });

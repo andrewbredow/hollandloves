@@ -9,6 +9,17 @@ layout: default
   </div>
 </section>
 
+<section class="filters">
+  <div class="filters-wrapper">
+    <form data-filter-form>
+      <select data-filter name="order">
+        <option value="rand" selected>Random</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </form>
+  </div>
+</section>
 <section class="causes">
   <div class="causes-wrapper">
     {% for cause in site.data.causes %}
