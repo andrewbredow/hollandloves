@@ -46,14 +46,9 @@ var HollandLoves = {
   },
 
   sortCauses: function(params) {
-    if (params == undefined || params["order"] == undefined) return;
+    if (params == undefined) return;
     var sortFunction = function() {};
     switch (params["order"]) {
-      case "rand":
-        sortFunction = function() {
-          return Math.random() > 0.5 ? -1 : 1;
-        };
-        break;
       case "asc":
         sortFunction = function(a, b) {
           var aName = a.querySelector(".org").textContent;
@@ -69,6 +64,11 @@ var HollandLoves = {
           if (aName == bName) return 0;
           return aName < bName ? 1 : -1;
         }
+        break;
+      default:
+        sortFunction = function() {
+          return Math.random() > 0.5 ? -1 : 1;
+        };
         break;
     }
 
