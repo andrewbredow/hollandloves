@@ -46,16 +46,16 @@ var HollandLoves = {
   },
 
   sortCauses: function(params) {
-    if (params == undefined) return;
+    if (params === undefined) return;
     var sortFunction = function() {};
-    switch (params["order"]) {
+    switch (params.order) {
       case "asc":
         sortFunction = function(a, b) {
           var aName = a.querySelector(".org").textContent;
           var bName = b.querySelector(".org").textContent;
           if (aName == bName) return 0;
           return aName > bName ? 1 : -1;
-        }
+        };
         break;
       case "desc":
         sortFunction = function(a, b) {
@@ -63,7 +63,7 @@ var HollandLoves = {
           var bName = b.querySelector(".org").textContent;
           if (aName == bName) return 0;
           return aName < bName ? 1 : -1;
-        }
+        };
         break;
       default:
         sortFunction = function() {
@@ -74,15 +74,15 @@ var HollandLoves = {
 
     var sortedCauses = this.causes.sort(sortFunction);
 
-    for (cause in sortedCauses) {
+    for (var cause in sortedCauses) {
       this.container.appendChild(sortedCauses[cause]);
     }
   },
 
   syncfilterState: function() {
     var params = this.searchParams();
-    if (params["order"]) {
-      document.querySelector("select[name=order]").value = params["order"];
+    if (params.order) {
+      document.querySelector("select[name=order]").value = params.order;
     }
   },
 
