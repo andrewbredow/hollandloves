@@ -149,6 +149,8 @@ section.footer {
   @include clearfix;
   margin-bottom: 3em;
 
+  overflow: hidden;
+
   .org {
   }
   .visual {
