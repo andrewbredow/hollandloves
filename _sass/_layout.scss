@@ -99,6 +99,24 @@ section.description {
   }
 }
 
+.filters-wrapper {
+  @include outer-container;
+  @include pad(default default 0 default);
+  select {
+    margin-bottom: 0;
+    font-size: 1em;
+    display: inline;
+    @include media($large-screen) {
+      font-size: 1.1em;
+    }
+  }
+  .filter-group {
+    @include shift(2);
+    @include span-columns(10);
+    text-align: right;
+  }
+}
+
 .causes {
   background-color: #fff;
   .causes-wrapper {
