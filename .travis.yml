@@ -6,5 +6,5 @@ rvm:
 before_script:
   - wget https://dl.eff.org/certbot-auto
   - chmod a+x certbot-auto
-  - ./certbot-auto standalone --quiet
+  - ./certbot-auto certontly --manual --quiet
 script: bundle exec rake travis
