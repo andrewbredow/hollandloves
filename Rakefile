@@ -1,6 +1,5 @@
 require "dotenv"
 require "rest_client"
-require "pry"
 
 Dotenv.load
 
