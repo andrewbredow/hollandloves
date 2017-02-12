@@ -3,6 +3,9 @@ require "rest_client"
 
 Dotenv.load
 
+desc "Deploy the production site and run certbot"
+task :travis => [:renew_ssl, :deploy]
+
 desc "Build the site"
 task :build do
   system "JEKYLL_ENV=production bundle exec jekyll build"
