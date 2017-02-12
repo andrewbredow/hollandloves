@@ -99,26 +99,67 @@ section.description {
   }
 }
 
-.filters-wrapper {
-  @include outer-container;
-  @include pad(default default 0 default);
-  select {
-    margin-bottom: 0;
-    font-size: 1em;
-    display: inline;
-    @include media($large-screen) {
-      font-size: 1.1em;
+section.filters {
+  background-color: $color-orange;
+  a {
+    color: $base-background-color;
+  }
+
+  .filters-wrapper {
+    @include outer-container;
+    form {
+      display: none;
+    }
+    .filter-options {
+      @include span-columns(5.5);
+      @include pad;
+    }
+    .sort-directions {
+      @include span-columns(5.5);
+      @include pad;
+      text-align: right;
+    }
+    .filter-controls {
+      @include span-columns(1);
+      @include omega;
+      position: relative;
+
+      .close-filters {
+        position: absolute;
+        top: $gutter;
+        right: 6px;
+      }
     }
   }
-  .filter-group {
-    @include shift(2);
-    @include span-columns(10);
+
+  .filter-trigger {
+    @include pad(default default 0 default);
     text-align: right;
+  }
+
+  transition: background-color 0.3s ease;
+
+  &[data-open=false] {
+    background-color: $base-background-color;
+    a {
+      color: $action-color;
+    }
+    .filter-groups {
+      display: none;
+    }
+  }
+  &[data-open=true] {
+    .filter-groups {
+      display: block;
+    }
+    .filter-trigger {
+      display: none;
+    }
   }
 }
 
 .causes {
-  background-color: #fff;
+  background-color: $base-background-color;
   .causes-wrapper {
     @include outer-container;
   }

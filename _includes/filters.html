@@ -1,0 +1,35 @@
+<div class="filter-groups">
+  <div class="filter-options">
+    {% comment %} <ul> {% endcomment %}
+    {% comment %}   <li><a href="#">Cause 1</a></li> {% endcomment %}
+    {% comment %}   <li><a href="#">Cause 2</a></li> {% endcomment %}
+    {% comment %}   <li><a href="#">Cause 3</a></li> {% endcomment %}
+    {% comment %} </ul> {% endcomment %}
+  </div>
+  <div class="sort-directions">
+    <ul>
+      <li><a href="#" data-filter-set-target="order" data-filter-value="rand">Random Order</a></li>
+      <li><a href="#" data-filter-set-target="order" data-filter-value="asc">Ascending Order</a></li>
+      <li><a href="#" data-filter-set-target="order" data-filter-value="desc">Descending Order</a></li>
+    </ul>
+  </div>
+  <div class="filter-controls">
+    <a href="#" class="close-filters" data-trigger-filter-close>
+      <i class="icon icon-close"></i>
+    </a>
+  </div>
+</div>
+
+<form data-filter-form>
+  <div class="filter-group">
+    <select data-filter name="order">
+      <option value="rand" selected>Random Order</option>
+      <option value="asc">Ascending Order</option>
+      <option value="desc">Descending Order</option>
+    </select>
+  </div>
+</form>
+
+<div class="filter-trigger">
+  <a href="#" data-trigger-filter-open>Filter Organizations</a>
+</div>

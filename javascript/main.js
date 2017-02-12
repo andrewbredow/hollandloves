@@ -5,32 +5,35 @@ var HollandLoves = {
 
     this.initSelectOnClick();
     this.initFilterForm();
-    this.handleFilterChange();
+    if (window.location.hash.length > 0) this.handleFilterChange();
     this.syncfilterState();
   },
 
   initFilterForm: function() {
-    var filterForm = document.querySelector("[data-filter-form]");
-    var filterNodes = filterForm.querySelectorAll("[data-filter]");
 
-    var updateParams = function() {
-      var params = [];
-      filterNodes.forEach(function(node) {
-        params.push(node.name + "=" + node.value);
-      });
-      window.location.hash = params.join("&");
-      this.handleFilterChange();
-    }.bind(this);
-
-    document.querySelectorAll("[data-filter]").forEach(function(el) {
-      el.addEventListener("change", function() {
-        updateParams();
-      });
+    document.querySelector("[data-trigger-filter-open]").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelector("section.filters[data-open]").setAttribute("data-open", "true");
     });
+    document.querySelector("[data-trigger-filter-close]").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelector("section.filters[data-open]").setAttribute("data-open", "false");
+    });
+
+    document.querySelectorAll("[data-filter-set-target]").forEach(function(el) {
+      el.addEventListener("click", function(e) {
+        e.preventDefault()
+        var paramName = el.getAttribute("data-filter-set-target");
+        var value = el.getAttribute("data-filter-value");
+        document.querySelector("select[name=" + paramName + "]").value = value;
+        this.handleFilterChange();
+      }.bind(this));
+    }.bind(this));
   },
 
   handleFilterChange: function() {
     this.sortCauses(this.searchParams());
+    this.updateUrlParams();
   },
 
   searchParams: function() {
@@ -84,6 +87,17 @@ var HollandLoves = {
     if (params.order) {
       document.querySelector("select[name=order]").value = params.order;
     }
+  },
+
+  updateUrlParams: function() {
+    var filterForm = document.querySelector("[data-filter-form]");
+    var filterNodes = filterForm.querySelectorAll("[data-filter]");
+
+    var params = [];
+    filterNodes.forEach(function(node) {
+      params.push(node.name + "=" + node.value);
+    });
+    window.location.hash = params.join("&");
   },
 
   initSelectOnClick: function() {

@@ -9,20 +9,13 @@ layout: default
   </div>
 </section>
 
-<section class="causes">
+<section class="filters" data-open="false">
   <div class="filters-wrapper">
-    <form data-filter-form>
-      <div class="filter-group">
-        {% comment %} <label for="sort-order">Sort</label> {% endcomment %}
-        <select data-filter name="order">
-          <option value="rand" selected>Random Order</option>
-          <option value="asc">Ascending Order</option>
-          <option value="desc">Descending Order</option>
-        </select>
-      </div>
-    </form>
+    {% include filters.html %}
   </div>
+</section>
 
+<section class="causes">
   <div class="causes-wrapper">
     {% for cause in site.data.causes %}
       {% include cause.html %}
