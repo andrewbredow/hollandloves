@@ -31,3 +31,4 @@ exclude:
   - LICENSE
   - README.md
   - Rakefile
+  - vendor
