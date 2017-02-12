@@ -32,8 +32,8 @@ var HollandLoves = {
   },
 
   handleFilterChange: function() {
-    this.sortCauses(this.searchParams());
     this.updateUrlParams();
+    this.sortCauses(this.searchParams());
   },
 
   searchParams: function() {
