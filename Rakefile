@@ -17,7 +17,7 @@ task :renew_ssl do
   command = %{
   AWS_ACCESS_KEY_ID="#{ENV["AWS_ACCESS_KEY_ID"]}" \
   AWS_SECRET_ACCESS_KEY="#{ENV["AWS_SECRET_ACCESS_KEY"]}" \
-  certbot-auto --agree-tos -a certbot-s3front:auth \
+  certbot --agree-tos -a certbot-s3front:auth \
   --logs-dir #{tmp} \
   --config-dir #{tmp} \
   --work-dir #{tmp} \
