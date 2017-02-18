@@ -4,7 +4,8 @@ require "rest_client"
 Dotenv.load
 
 desc "Deploy the production site and run certbot"
-task :travis => [:renew_ssl, :deploy]
+# task :travis => [:renew_ssl, :deploy]
+task :travis => [:deploy]
 
 desc "Build the site"
 task :build do
