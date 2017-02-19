@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Holland Loves
-email: your-email@domain.com
+email: info@hollandloves.org
 repo: "https://github.com/andrewbredow/hollandloves"
 issues: "https://github.com/andrewbredow/hollandloves/issues"
 tracking_id: "UA-89598047-1"

@@ -10,39 +10,6 @@ body {
 section.header {
   @include outer-container;
 
-  // BETA
-  .ribbon-wrapper {
-    $ribbon-background: $action-color;
-    $ribbon-size: 120px;
-
-    @include size($ribbon-size);
-    overflow: hidden;
-    position: absolute;
-    left: -25px;
-    top: -1px;
-
-    .ribbon {
-      background-color: $ribbon-background;
-      box-shadow: 0 0 3px rgba(#000, 0.3);
-      color: #fff;
-      font-size: 1em;
-      font-weight: bold;
-      left: -5px;
-      line-height: 1.5em;
-      padding: 2px 7px;
-      position: relative;
-      text-align: center;
-      top: 15px;
-      transform: rotate(-45deg);
-      width: 120px;
-
-      a {
-        color: #fff;
-      }
-    }
-  }
-  // END BETA
-
   header {
     color: $color-red;
     text-align: center;
