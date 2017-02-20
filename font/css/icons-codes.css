@@ -2,6 +2,7 @@
 .icon-mail:before { content: '\e800'; } /* '' */
 .icon-phone:before { content: '\e801'; } /* '' */
 .icon-close:before { content: '\e802'; } /* '' */
+.icon-copy:before { content: '\e803'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-money:before { content: '\f0d6'; } /* '' */

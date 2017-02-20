@@ -42,11 +42,18 @@
 
     <div class="details">
       {% if cause.email %}
-        <div>
-          <input readonly value="{{cause.email}}" class="email-element copy" data-select-on-click />
-          <a class="email email-element send" href="mailto:{{cause.email}}" title="Send an Email in Your Email Client">
-            <span class="email-element click">Email</span>
+        <div class="email-element">
+          <a class="tooltip-item email send" href="mailto:{{cause.email}}" title="Send an Email in Your Email Client">
+            <span class="email-element short">Email</span>
+            <span class="email-element full">{{cause.email}}</span>
             <i class="icon icon-mail"></i>
+            <div class="tooltip">
+              <p>Copied!</p>
+            </div>
+          </a>
+
+          <a href="#" data-clipboard-text="{{cause.email}}" title="Copy the Email Address to Your Clipboard">
+            <i class="icon icon-copy"></i>
           </a>
         </div>
       {% endif %}

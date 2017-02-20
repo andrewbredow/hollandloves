@@ -3,7 +3,8 @@ var HollandLoves = {
     this.container = document.querySelector(".causes-wrapper");
     this.causes    = Array.prototype.slice.call(document.querySelectorAll(".cause"), 0);
 
-    this.initSelectOnClick();
+    this.initCopyEmail();
+    this.initTooltips();
     this.initFilterForm();
     if (window.location.hash.length > 0) this.handleFilterChange();
     this.syncfilterState();
@@ -100,10 +101,24 @@ var HollandLoves = {
     window.location.hash = params.join("&");
   },
 
-  initSelectOnClick: function() {
-    document.querySelectorAll("[data-select-on-click]").forEach(function(el) {
-      el.addEventListener("click", function(event) {
-        event.target.select();
+  initCopyEmail: function() {
+    document.querySelectorAll("[data-clipboard-text]").forEach(function(el) {
+      el.addEventListener("click", function(e) {
+        e.preventDefault();
+      });
+    });
+    var clipboard = new Clipboard("[data-clipboard-text]");
+    clipboard.on("success", function(e) {
+      e.trigger.parentNode.querySelector(".tooltip-item").setAttribute("class", "tooltip-item email send open");
+    });
+  },
+
+  initTooltips: function() {
+    document.querySelectorAll("[data-clipboard-text]").forEach(function(el) {
+      el.addEventListener('mouseleave', function(e) {
+        document.querySelectorAll(".tooltip-item.open").forEach(function(tt) {
+          tt.setAttribute("class", "tooltip-item email send");
+        });
       });
     });
   }

@@ -212,22 +212,18 @@ section.footer {
     @include span-columns(10);
 
     .email-element {
-      &.copy {
-        display: none;
-        @include media($large-screen) {
-          display: inline;
-        }
-        background-color: lighten($light-gray, 10%);
-        margin-right: .5em;
-        width: auto;
-        &:focus {
-          outline: none;
-          box-shadow: none;
-        }
+      &.short {
+        display: inline;
       }
-      &.click {
-        @include media($large-screen) {
+      &.full {
+        display: none;
+      }
+      @include media($large-screen) {
+        &.short {
           display: none;
+        }
+        &.full {
+          display: inline;
         }
       }
       .icon {
@@ -238,7 +234,6 @@ section.footer {
           font-size: 1.3em;
         }
       }
-
     }
 
     .tel {
