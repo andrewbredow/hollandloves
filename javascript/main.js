@@ -6,12 +6,11 @@ var HollandLoves = {
     this.initCopyEmail();
     this.initTooltips();
     this.initFilterForm();
-    if (window.location.hash.length > 0) this.handleFilterChange();
     this.syncfilterState();
+    this.handleFilterChange(); // trigger initial random load
   },
 
   initFilterForm: function() {
-
     document.querySelector("[data-trigger-filter-open]").addEventListener("click", function(e) {
       e.preventDefault();
       document.querySelector("section.filters[data-open]").setAttribute("data-open", "true");
