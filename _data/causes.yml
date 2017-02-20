@@ -258,3 +258,19 @@
     state: MI
     postal_code: 49424
 
+- name: Children’s Advocacy Center
+  description: >
+    To protect children by providing prevention and multi-disciplinary intervention in investigation, assessment, and treatment of child sexual abuse in an environment that is child sensitive, supportive, and safe.
+  website: "http://www.cac-ottawa.org"
+  photo: cac.jpg
+  twitter:
+  facebook: cacottawa
+  phone:
+    - 6163930918
+  email: dkomejan@cac-ottawa.org
+  address:
+    description:
+    street_address: 12125 Union St
+    city: Holland
+    state: MI
+    postal_code: 49424
