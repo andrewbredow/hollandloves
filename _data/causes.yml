@@ -241,3 +241,20 @@
     state: MI
     postal_code: 49423
 
+- name: Center for Women in Transition
+  description: >
+    The Center’s mission is to respond to, reduce, and prevent domestic and sexual violence.
+  website: "https://cwitmi.org"
+  photo: cfwit.jpg
+  twitter:
+  facebook: CWIT.MI
+  phone:
+    - 6163922829
+  email: mail@aplaceforwomen.org
+  address:
+    description:
+    street_address: 411 Butternut Drive
+    city: Holland
+    state: MI
+    postal_code: 49424
+
