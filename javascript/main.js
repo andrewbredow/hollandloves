@@ -1,7 +1,7 @@
 var HollandLoves = {
   init: function() {
-    this.container = document.querySelector(".causes-wrapper");
-    this.causes    = Array.prototype.slice.call(document.querySelectorAll(".cause"), 0);
+    this.container = document.querySelector(".organizations-wrapper");
+    this.organizations    = Array.prototype.slice.call(document.querySelectorAll(".organization"), 0);
 
     this.initCopyEmail();
     this.initTooltips();
@@ -33,7 +33,7 @@ var HollandLoves = {
 
   handleFilterChange: function() {
     this.updateUrlParams();
-    this.sortCauses(this.searchParams());
+    this.sortOrganizations(this.searchParams());
   },
 
   searchParams: function() {
@@ -48,7 +48,7 @@ var HollandLoves = {
     return searchParams;
   },
 
-  sortCauses: function(params) {
+  sortOrganizations: function(params) {
     if (params === undefined) return;
     var sortFunction = function() {};
     switch (params.order) {
@@ -75,10 +75,10 @@ var HollandLoves = {
         break;
     }
 
-    var sortedCauses = this.causes.sort(sortFunction);
+    var sortedOrganizations = this.organizations.sort(sortFunction);
 
-    for (var cause in sortedCauses) {
-      this.container.appendChild(sortedCauses[cause]);
+    for (var organization in sortedOrganizations) {
+      this.container.appendChild(sortedOrganizations[organization]);
     }
   },
 

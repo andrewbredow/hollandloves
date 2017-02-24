@@ -125,10 +125,11 @@ section.filters {
   }
 }
 
-.causes {
+.organizations {
   background-color: $base-background-color;
-  .causes-wrapper {
+  .organizations-wrapper {
     @include outer-container;
+    @include pad;
   }
 }
 
@@ -165,13 +166,7 @@ section.footer {
   }
 }
 
-.causes {
-  .causes-wrapper {
-    @include pad;
-  }
-}
-
-.cause {
+.organization {
   @include clearfix;
   margin-bottom: 3em;
 

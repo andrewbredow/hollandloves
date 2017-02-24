@@ -1,0 +1,111 @@
+<div class="organization vcard">
+
+  <div class="visual">
+    {% if organization.photo %}
+      <img class="photo" src="/img/organizations/{{organization.photo}}" alt="{{organization.name}}" />
+    {% endif %}
+
+    <ul class="links">
+      {% if organization.website %}
+        <li>
+          <a class="url" href="{{organization.website}}" title="Visit the {{organization.name}} website">
+            <span class="description">Website</span>
+            <i class="icon icon-website"></i>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if organization.twitter %}
+        <li>
+          <a href="https://twitter.com/{{organization.twitter}}" rel="nofollow" title="Follow {{organization.namel}} on Twitter">
+            <span class="description">Twitter</span>
+            <i class="icon icon-twitter"></i>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if organization.facebook %}
+        <li>
+          <a href="https://facebook.com/{{organization.facebook}}" rel="nofollow" title="Follow {{organization.name}} on Facebook">
+            <span class="description">Facebook</span>
+            <i class="icon icon-facebook"></i>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <div class="details">
+    <h2 class="fn org">{{organization.name}}</h2>
+
+    <p class="note">{{organization.description}}</p>
+
+    <div class="details">
+      {% if organization.email %}
+        <div class="email-element">
+          <a class="tooltip-item email send" href="mailto:{{organization.email}}" title="Send an Email in Your Email Client">
+            <span class="email-element short">Email</span>
+            <span class="email-element full">{{organization.email}}</span>
+            <i class="icon icon-mail"></i>
+            <div class="tooltip">
+              <p>Copied!</p>
+            </div>
+          </a>
+
+          <a href="#" data-clipboard-text="{{organization.email}}" title="Copy the Email Address to Your Clipboard">
+            <i class="icon icon-copy"></i>
+          </a>
+        </div>
+      {% endif %}
+
+      {% for phone in organization.phone %}
+        {% capture str_phone %}{{phone}}{%endcapture%}
+        <div>
+          <a class="tel" href="tel:+1{{str_phone | slice: 0, 10}}">
+            ({{str_phone | slice: 0, 3}})
+            {{str_phone | slice: 3, 3}}-{{str_phone | slice: 6, 4}}
+            {% if str_phone.size > 10 %}
+              x{{str_phone | slice: 10, str_phone.size}}
+            {% endif %}
+            <i class="icon icon-phone"></i>
+          </a>
+        </div>
+      {% endfor %}
+
+      {% if organization.address.street_address %}
+        <div class="address">
+          <div class="adr">
+            {% if organization.address.description %}
+              <div class="description">{{organization.address.description}}</div>
+            {% endif %}
+            <span class="line">
+              <span class="street-address">{{organization.address.street_address}}</span>
+            </span>
+            <span class="line">
+              <span class="locality">{{organization.address.city}}</span>,
+              <span class="region">{{organization.address.state}}</span>
+              <span class="postal-code">{{organization.address.postal_code}}</span>
+            </span>
+
+          </div>
+          {% unless organization.address.street_address contains "P.O. Box" %}
+            <div class="directions">
+              {% capture str_address %}{{organization.address.street_address}} {{organization.address.city}}, {{organization.address.state}} {{organization.address.postal_code}}{%endcapture%}
+              <a href="https://maps.google.com/?q={{ str_address + url_encode}}" rel="nofollow" title="Get directions to {{organization.name}}">
+                <i class="icon icon-map"></i>
+              </a>
+            </div>
+          {% endunless %}
+        </div>
+      {% endif %}
+
+      {% if false %}
+        <i class="icon icon-donate"></i>
+      {% endif %}
+
+      {% if false %}
+        <i class="icon icon-volunteer"></i>
+      {% endif %}
+    </div>
+  </div>
+</div>
