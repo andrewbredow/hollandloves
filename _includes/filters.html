@@ -1,16 +1,18 @@
 <div class="filter-groups">
   <div class="filter-options">
-    {% comment %} <ul> {% endcomment %}
-    {% comment %}   <li><a href="#">Cause 1</a></li> {% endcomment %}
-    {% comment %}   <li><a href="#">Cause 2</a></li> {% endcomment %}
-    {% comment %}   <li><a href="#">Cause 3</a></li> {% endcomment %}
-    {% comment %} </ul> {% endcomment %}
+    Filter by Cause:
+    <ul>
+      {% for cause in site.data.causes %}
+        <li><a href="#" data-filter-set-target="order" data-filter-value="{{order.value}}">{{order.name}}</a></li>
+      {% endfor %}
+    </ul>
   </div>
   <div class="sort-directions">
+    Sort:
     <ul>
-      <li><a href="#" data-filter-set-target="order" data-filter-value="rand">Random Order</a></li>
-      <li><a href="#" data-filter-set-target="order" data-filter-value="asc">Ascending Order</a></li>
-      <li><a href="#" data-filter-set-target="order" data-filter-value="desc">Descending Order</a></li>
+      {% for order in site.data.orders %}
+        <li><a href="#" data-filter-set-target="order" data-filter-value="{{order.value}}">{{order.name}}</a></li>
+      {% endfor %}
     </ul>
   </div>
   <div class="filter-controls">
@@ -23,9 +25,9 @@
 <form data-filter-form>
   <div class="filter-group">
     <select data-filter name="order">
-      <option value="rand" selected>Random Order</option>
-      <option value="asc">Ascending Order</option>
-      <option value="desc">Descending Order</option>
+      {% for order in site.data.orders %}
+        <option value="{{order.value}}">{{order.name}}</option>
+      {% endfor %}
     </select>
   </div>
 </form>
