@@ -1,9 +1,9 @@
 <div class="filter-groups">
   <div class="filter-options">
-    Filter by Cause:
+    Filter by Issues:
     <ul>
       {% for cause in site.data.causes %}
-        <li><a href="#" data-filter-set-target="order" data-filter-value="{{order.value}}">{{order.name}}</a></li>
+        <li><a href="#" data-filter-name="order" data-filter-value="{{cause.value}}">{{cause.name}}</a></li>
       {% endfor %}
     </ul>
   </div>
@@ -11,7 +11,7 @@
     Sort:
     <ul>
       {% for order in site.data.orders %}
-        <li><a href="#" data-filter-set-target="order" data-filter-value="{{order.value}}">{{order.name}}</a></li>
+        <li><a href="#" data-filter-name="order" data-filter-value="{{order.value}}">{{order.name}}</a></li>
       {% endfor %}
     </ul>
   </div>
@@ -21,16 +21,6 @@
     </a>
   </div>
 </div>
-
-<form data-filter-form>
-  <div class="filter-group">
-    <select data-filter name="order">
-      {% for order in site.data.orders %}
-        <option value="{{order.value}}">{{order.name}}</option>
-      {% endfor %}
-    </select>
-  </div>
-</form>
 
 <div class="filter-trigger">
   <a href="#" data-trigger-filter-open>Filter Organizations</a>

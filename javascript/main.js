@@ -6,7 +6,6 @@ var HollandLoves = {
     this.initCopyEmail();
     this.initTooltips();
     this.initFilterForm();
-    this.syncfilterState();
     this.syncActiveState();
     this.handleFilterChange(); // trigger initial random load
   },
@@ -21,18 +20,19 @@ var HollandLoves = {
       $("section.filters[data-open]").attr("data-open", "false");
     });
 
-    $("[data-filter-set-target]").on("click", function(e) {
+    $("[data-filter-name]").on("click", function(e) {
       e.preventDefault()
       var el = $(e.target);
-      var paramName = el.attr("data-filter-set-target");
+      var paramName = el.attr("data-filter-name");
       var value = el.attr("data-filter-value");
-      $("select[name=" + paramName + "]").val(value);
+      var params = this.searchParams();
+      params[paramName] = value;
+      window.location.hash = $.param(params);
       this.handleFilterChange();
     }.bind(this));
   },
 
   handleFilterChange: function() {
-    this.updateUrlParams();
     this.sortOrganizations(this.searchParams());
   },
 
@@ -79,20 +79,11 @@ var HollandLoves = {
     this.container.empty().append(sortedOrganizations);
   },
 
-  syncfilterState: function() {
+  syncActiveState: function() {
     var params = this.searchParams();
     if (params.order) {
-      $("select[name=order]").val(params.order);
+
     }
-  },
-
-  updateUrlParams: function() {
-    var params = $("[data-filter-form] [data-filter]").reduce(function(memo, node) {
-      memo[node.name] = node.value;
-      return memo;
-    }, {});
-
-    window.location.hash = $.param(params);
   },
 
   initCopyEmail: function() {
