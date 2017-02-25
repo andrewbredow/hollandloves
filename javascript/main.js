@@ -1,33 +1,33 @@
 var HollandLoves = {
   init: function() {
-    this.container = document.querySelector(".organizations-wrapper");
-    this.organizations    = Array.prototype.slice.call(document.querySelectorAll(".organization"), 0);
+    this.container = $(".organizations-wrapper");
+    this.organizations = $(".organization");
 
     this.initCopyEmail();
     this.initTooltips();
     this.initFilterForm();
     this.syncfilterState();
+    this.syncActiveState();
     this.handleFilterChange(); // trigger initial random load
   },
 
   initFilterForm: function() {
-    document.querySelector("[data-trigger-filter-open]").addEventListener("click", function(e) {
+    $("[data-trigger-filter-open]").on("click", function(e) {
       e.preventDefault();
-      document.querySelector("section.filters[data-open]").setAttribute("data-open", "true");
+      $("section.filters[data-open]").attr("data-open", "true");
     });
-    document.querySelector("[data-trigger-filter-close]").addEventListener("click", function(e) {
+    $("[data-trigger-filter-close]").on("click", function(e) {
       e.preventDefault();
-      document.querySelector("section.filters[data-open]").setAttribute("data-open", "false");
+      $("section.filters[data-open]").attr("data-open", "false");
     });
 
-    document.querySelectorAll("[data-filter-set-target]").forEach(function(el) {
-      el.addEventListener("click", function(e) {
-        e.preventDefault()
-        var paramName = el.getAttribute("data-filter-set-target");
-        var value = el.getAttribute("data-filter-value");
-        document.querySelector("select[name=" + paramName + "]").value = value;
-        this.handleFilterChange();
-      }.bind(this));
+    $("[data-filter-set-target]").on("click", function(e) {
+      e.preventDefault()
+      var el = $(e.target);
+      var paramName = el.attr("data-filter-set-target");
+      var value = el.attr("data-filter-value");
+      $("select[name=" + paramName + "]").val(value);
+      this.handleFilterChange();
     }.bind(this));
   },
 
@@ -54,16 +54,16 @@ var HollandLoves = {
     switch (params.order) {
       case "asc":
         sortFunction = function(a, b) {
-          var aName = a.querySelector(".org").textContent;
-          var bName = b.querySelector(".org").textContent;
+          var aName = $(a).find(".org").text();
+          var bName = $(b).find(".org").text();
           if (aName == bName) return 0;
           return aName > bName ? 1 : -1;
         };
         break;
       case "desc":
         sortFunction = function(a, b) {
-          var aName = a.querySelector(".org").textContent;
-          var bName = b.querySelector(".org").textContent;
+          var aName = $(a).find(".org").text();
+          var bName = $(b).find(".org").text();
           if (aName == bName) return 0;
           return aName < bName ? 1 : -1;
         };
@@ -76,53 +76,42 @@ var HollandLoves = {
     }
 
     var sortedOrganizations = this.organizations.sort(sortFunction);
-
-    for (var organization in sortedOrganizations) {
-      this.container.appendChild(sortedOrganizations[organization]);
-    }
+    this.container.empty().append(sortedOrganizations);
   },
 
   syncfilterState: function() {
     var params = this.searchParams();
     if (params.order) {
-      document.querySelector("select[name=order]").value = params.order;
+      $("select[name=order]").val(params.order);
     }
   },
 
   updateUrlParams: function() {
-    var filterForm = document.querySelector("[data-filter-form]");
-    var filterNodes = filterForm.querySelectorAll("[data-filter]");
+    var params = $("[data-filter-form] [data-filter]").reduce(function(memo, node) {
+      memo[node.name] = node.value;
+      return memo;
+    }, {});
 
-    var params = [];
-    filterNodes.forEach(function(node) {
-      params.push(node.name + "=" + node.value);
-    });
-    window.location.hash = params.join("&");
+    window.location.hash = $.param(params);
   },
 
   initCopyEmail: function() {
-    document.querySelectorAll("[data-clipboard-text]").forEach(function(el) {
-      el.addEventListener("click", function(e) {
-        e.preventDefault();
-      });
+    $("[data-clipboard-text]").on("click", function(e) {
+      e.preventDefault();
     });
     var clipboard = new Clipboard("[data-clipboard-text]");
     clipboard.on("success", function(e) {
-      e.trigger.parentNode.querySelector(".tooltip-item").setAttribute("class", "tooltip-item email send open");
+      $(e.trigger.parentNode).find(".tooltip-item").addClass("open");
     });
   },
 
   initTooltips: function() {
-    document.querySelectorAll("[data-clipboard-text]").forEach(function(el) {
-      el.addEventListener('mouseleave', function(e) {
-        document.querySelectorAll(".tooltip-item.open").forEach(function(tt) {
-          tt.setAttribute("class", "tooltip-item email send");
-        });
-      });
+    $("[data-clipboard-text]").on('mouseleave', function(e) {
+      $(".tooltip-item.open").removeClass("open");
     });
   }
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+$(document).ready(function() {
   HollandLoves.init();
 });
