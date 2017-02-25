@@ -6,8 +6,8 @@ var HollandLoves = {
     this.initCopyEmail();
     this.initTooltips();
     this.initFilterForm();
+    this.handleFilterChange();
     this.syncActiveState();
-    this.handleFilterChange(); // trigger initial random load
   },
 
   initFilterForm: function() {
@@ -20,6 +20,7 @@ var HollandLoves = {
       $("section.filters[data-open]").attr("data-open", "false");
     });
 
+    // Refactor this crap
     $("[data-filter-name]").on("click", function(e) {
       e.preventDefault()
       var el = $(e.target);
@@ -29,6 +30,7 @@ var HollandLoves = {
       params[paramName] = value;
       window.location.hash = $.param(params);
       this.handleFilterChange();
+      this.syncActiveState();
     }.bind(this));
   },
 
@@ -82,7 +84,10 @@ var HollandLoves = {
   syncActiveState: function() {
     var params = this.searchParams();
     if (params.order) {
-
+      $("[data-filter-name=order]")
+        .removeClass("active")
+        .filter("[data-filter-value=" + params.order + "]")
+        .addClass("active");
     }
   },
 

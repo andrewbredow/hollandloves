@@ -74,8 +74,8 @@ section.filters {
 
   .filters-wrapper {
     @include outer-container;
-    form {
-      display: none;
+    a.active {
+      font-weight: bold;
     }
     .filter-options {
       @include span-columns(5.5);
