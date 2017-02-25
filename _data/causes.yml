@@ -1,0 +1,14 @@
+- name: Immigration
+  value: immigration
+- name: LGBTQ
+  value: lgbtq
+- name: Womens
+  value: women
+- name: Poverty
+  value: poverty
+- name: Race
+  value: race
+- name: Children
+  value: children
+- name: Environment
+  value: environment
