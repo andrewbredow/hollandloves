@@ -12,6 +12,8 @@
     city: Holland
     state: MI
     postal_code: 49422-1246
+  causes:
+    - lgbtq
 
 - name: Lakeshore Ethnic Diversity Alliance
   description: >
@@ -28,6 +30,9 @@
     city: Holland
     state: MI
     postal_code: 49424
+  causes:
+    - race
+    - immigration
 
 - name: Alliance for Cultural and Ethnic Harmony
   description: >
@@ -45,6 +50,8 @@
     city: Holland
     state: MI
     postal_code: 49422-3007
+  causes:
+    - race
 
 - name: Latin Americans United for Progress
   description: >
@@ -61,6 +68,10 @@
     city: Holland
     state: MI
     postal_code: 49423
+  causes:
+    - immigration
+    - race
+    - kids
 
 - name: Justice for our Neighbors
   description: >
@@ -78,6 +89,8 @@
     city: Holland
     state: MI
     postal_code: 49423
+  causes:
+    - immigration
 
 - name: Holland is Ready
   description: >
@@ -93,6 +106,8 @@
     city: Holland
     state: MI
     postal_code: 49422-2064
+  causes:
+    - lgbtq
 
 - name: Lakeshore Housing Alliance
   description: >
@@ -110,6 +125,8 @@
     city:
     state:
     postal_code:
+  causes:
+    - poverty
 
 - name: African American Awareness and Development Organization
   description: >
@@ -125,6 +142,9 @@
     city: Holland
     state: MI
     postal_code: 49422-1131
+  causes:
+    - children
+    - race
 
 - name: Community Action House
   description: >
@@ -141,6 +161,8 @@
     city: Holland
     state: MI
     postal_code: 49423
+  causes:
+    - poverty
 
 - name: Good Samaritan Ministries
   description: >
@@ -157,6 +179,8 @@
     city: Holland
     state: MI
     postal_code: 49423
+  causes:
+    - poverty
 
 - name: Lighthouse Immigration Advocates
   description: >
@@ -173,6 +197,8 @@
     city: Holland
     state: MI
     postal_code: 49424
+  causes:
+    - immigration
 
 - name: "Progressive Women's Alliance - Lakeshore"
   description: >
@@ -188,6 +214,8 @@
     city:
     state:
     postal_code:
+  causes:
+    - women
 
 - name: Immigrants Are a Blessing Not a Burden
   description: >
@@ -204,6 +232,8 @@
     city:
     state:
     postal_code:
+  causes:
+    - immigration
 
 # - name: Holland Public Schools Equity Alliance
 #   description: >
@@ -223,6 +253,9 @@
 #     city: Holland
 #     state: MI
 #     postal_code: 49423
+#   causes:
+#     - children
+#     - race
 
 - name: 70x7 Life Recovery
   description: >
@@ -240,6 +273,8 @@
     city: Holland
     state: MI
     postal_code: 49423
+  causes:
+    - poverty
 
 - name: Center for Women in Transition
   description: >
@@ -257,6 +292,9 @@
     city: Holland
     state: MI
     postal_code: 49424
+  causes:
+    - women
+    - children
 
 - name: Children’s Advocacy Center
   description: >
@@ -274,3 +312,6 @@
     city: Holland
     state: MI
     postal_code: 49424
+  causes:
+    - children
+
