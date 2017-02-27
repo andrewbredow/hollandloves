@@ -6,6 +6,7 @@ var HollandLoves = {
     this.initCopyEmail();
     this.initTooltips();
     this.initFilterForm();
+    this.handleSortChange();
     this.handleFilterChange();
     this.syncActiveState();
   },
@@ -20,34 +21,66 @@ var HollandLoves = {
       $("section.filters[data-open]").attr("data-open", "false");
     });
 
-    // Refactor this crap
-    $("[data-filter-name]").on("click", function(e) {
-      e.preventDefault()
+    $("[data-filter-name=order]").on("click", function(e) {
+      e.preventDefault();
       var el = $(e.target);
-      var paramName = el.attr("data-filter-name");
       var value = el.attr("data-filter-value");
       var params = this.searchParams();
-      params[paramName] = value;
+
+      params.order = value;
+
       window.location.hash = $.param(params);
-      this.handleFilterChange();
+      $(window.location).trigger("sortChange");
+    }.bind(this));
+
+    $("[data-filter-name=cause]").on("click", function(e) {
+      e.preventDefault();
+      var el = $(e.target);
+      var value = el.attr("data-filter-value");
+      var params = this.searchParams();
+      var existingValues = params.cause || [];
+      existingValues = typeof existingValues == "string" ? [existingValues] : existingValues;
+
+      if (existingValues.indexOf(value) > -1) {
+        existingValues = existingValues.filter(function(val) {
+          return val !== value;
+        });
+      } else {
+        existingValues.push(value);
+      }
+      existingValues = existingValues.filter(function(v) { return v !== ""; });
+      params.cause = existingValues;
+
+      var newParams = $.param(params),
+        hash = newParams.length > 0 ? newParams : "#_";
+
+      window.location.hash = hash;
+      $(window.location).trigger("filterChange");
+    }.bind(this));
+
+    $(window.location).on("sortChange", function(e) {
       this.syncActiveState();
+      this.handleSortChange();
+    }.bind(this));
+
+    $(window.location).on("filterChange", function(e) {
+      this.syncActiveState();
+      this.handleFilterChange();
     }.bind(this));
   },
 
-  handleFilterChange: function() {
+  handleSortChange: function() {
     this.sortOrganizations(this.searchParams());
   },
 
+  handleFilterChange: function() {
+    this.filterOrganizations(this.searchParams());
+  },
+
   searchParams: function() {
-    var params = window.location.hash.slice(1).split("&");
-    var searchParams = {};
-    params.forEach(function(param) {
-      var p = param.split("=");
-      if (p.length == 2) {
-        searchParams[p[0]] = p[1];
-      }
-    });
-    return searchParams;
+    params = $.deparam(window.location.hash.slice(1));
+    delete params["_"];
+    return params;
   },
 
   sortOrganizations: function(params) {
@@ -81,6 +114,19 @@ var HollandLoves = {
     this.container.empty().append(sortedOrganizations);
   },
 
+  filterOrganizations: function() {
+    $(".organization").show();
+
+    var causes = this.searchParams().cause;
+    if (! causes || causes.length == 0) return true;
+
+    var selectors = [];
+    params.cause.forEach(function(value) {
+      selectors.push("[data-cause*=" + value + "]");
+    });
+    $(".organization").not(selectors.join(",")).hide();
+  },
+
   syncActiveState: function() {
     var params = this.searchParams();
     if (params.order) {
@@ -88,6 +134,18 @@ var HollandLoves = {
         .removeClass("active")
         .filter("[data-filter-value=" + params.order + "]")
         .addClass("active");
+    }
+    var elements = $("[data-filter-name=cause]")
+      .removeClass("active");
+    if (params.cause) {
+      if (params.cause.length > 0) {
+        var selectors = [];
+        params.cause.forEach(function(value) {
+          selectors.push("[data-filter-value=" + value + "]");
+        });
+        elements.filter(selectors.join(","))
+          .addClass("active");
+      }
     }
   },
 

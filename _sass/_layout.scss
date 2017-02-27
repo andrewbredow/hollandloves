@@ -16,6 +16,7 @@ section.header {
     @include pad;
     padding-bottom: 0;
     @include clearfix;
+    position: relative;
 
     .logo {
       width: 2em;
@@ -43,7 +44,9 @@ section.header {
       display: none;
       @include media($large-screen) {
         display: block;
-        float: right;
+        position: absolute;
+        top: $gutter/2;
+        right: $gutter;
         .icon {
           font-size: 2em;
         }
